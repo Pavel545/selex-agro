@@ -1,0 +1,36 @@
+.infoLocation {
+  border-radius: 10px;
+  backdrop-filter: blur(100px);
+  background: rgba(255, 255, 255, 0.04);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 60px 40px;
+}
+.infoLocation-item {
+  align-items: center;
+  gap: 20px;
+}
+.infoLocation-item_svg {
+  --k: 110px;
+  width: var(--k);
+  height: var(--k);
+  border: 0.7px solid #fff;
+  border-radius: 100%;
+}
+.infoLocation-item_title {
+  font-weight: 700;
+  font-size: var(--t40);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-t2);
+}
+.infoLocation-item_link {
+  font-weight: 300;
+  font-size: var(--t30);
+  font-variant: small-caps;
+  text-align: center;
+  color: var(--color-t2);
+}
+.infoLocation-item_links {
+  align-items: center;
+}

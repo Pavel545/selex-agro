@@ -1,0 +1,379 @@
+@import url(../barlow.css);
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+
+    --font-family: "Barlow", sans-serif;
+
+    --color-t1: #1e1e1e;
+    --color-t2: #fff;
+
+    --color-bg: #2f1f0c;
+
+    --t18: clamp(16px, 1rem + 0.5vw, 18px);
+    --t24: clamp(18px, 1.25rem + 0.5vw, 24px);
+    --t30: clamp(20px, 1.5rem + 0.75vw, 30px);
+    --t36: clamp(22px, 1.75rem + 1vw, 36px);
+    --t40: clamp(24px, 2rem + 1.25vw, 40px);
+    --t45: clamp(26px, 2.25rem + 1.5vw, 45px);
+
+    --m: 50px;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: var(--font-family);
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+
+    cursor: pointer;
+}
+
+.container {
+    max-width: none;
+    padding: 0 170px;
+
+    @media (max-width: 1601px) {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+    }
+
+    @media (max-width: 1401px) {}
+
+    @media only screen and (max-width: 1000px) {
+        max-width: none;
+        width: 100%;
+
+        padding: 0 17px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 0 8px;
+        overflow: hidden;
+
+    }
+}
+
+@media (max-width: 1001px) {
+    .b24-widget-button-wrapper {
+        right: 20px !important;
+        bottom: 100px !important;
+    }
+}
+
+.flex {
+    display: flex;
+
+    &--center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &--sb {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &--fc {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.h1 {
+    font-weight: 800;
+    font-size: clamp(56px, 5.5rem + 1vw, 6.5rem);
+    color: var(--color-t2);
+    text-transform: uppercase;
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+    line-height: 110%;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -14px;
+        background: var(--color-t2);
+        width: 0;
+        height: 1px;
+
+        /* Сокращенная запись анимации */
+        animation: ww 500ms ease-in 470ms forwards;
+    }
+
+    @media (max-width: 1000px) {
+        width: auto;
+        font-size: clamp(42px, 8vw, 48px);
+    }
+
+    @keyframes ww {
+        to {
+            width: 100%;
+        }
+
+        /* from можно не указывать, т.к. начальное состояние уже width: 0 */
+    }
+}
+
+.h2 {
+    font-weight: 400;
+    font-size: var(--t40);
+    font-variant: small-caps;
+    color: var(--color-t1);
+
+    text-transform: uppercase;
+
+    @media (max-width: 500px) {
+        font-size: var(--t36);
+
+    }
+
+}
+
+.button {
+    display: block;
+    width: min-content;
+    text-wrap: nowrap;
+    border: 1px solid;
+    border-radius: 30px;
+    padding: 15px 30px;
+    color: var(--color-t2);
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    font-weight: 300;
+    font-size: 26px;
+
+
+    /* Стандартный подход для максимальной поддержки */
+    white-space: nowrap;
+
+    /* Дополнительная защита */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-text-wrap: nowrap;
+    /* Для WebKit браузеров */
+    -moz-text-wrap: nowrap;
+    /* Для Firefox */
+    text-wrap: nowrap;
+    white-space: nowrap;
+
+    span {
+        font-weight: 300;
+        font-size: 26px;
+    }
+
+    transition: border-color 0.4s ease,
+    background-color 0.4s ease;
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    rect {
+        fill: none;
+        stroke: var(--color-t2);
+        stroke-width: 2;
+        /* Начальное состояние - полная линия */
+        stroke-dasharray: 1000;
+        /* Большое значение чтобы покрыть любую кнопку */
+        stroke-dashoffset: 0;
+        transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+        rx: 30px;
+        ry: 30px;
+    }
+
+    &.-t1 {
+        border-color: var(--color-t2);
+        background: transparent;
+
+        &:hover {
+            border-color: transparent;
+            background: rgba(255, 255, 255, 0.1);
+
+            rect {
+                stroke-width: 3;
+                /* Анимация: оставляем небольшой сегмент внизу */
+                stroke-dasharray: 50, 950;
+                /* 50px видимо, остальное прозрачно */
+                stroke-dashoffset: 275;
+                /* Центрируем сегмент внизу */
+                transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+        }
+    }
+
+    &.-t2 {
+        border-color: var(--color-bg);
+        background: var(--color-bg);
+        overflow: hidden;
+        font-size: 26px;
+
+        box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.25);
+
+        span {
+            z-index: 2;
+            position: relative;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--color-t2);
+            border-radius: 30px;
+            transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+            z-index: 1;
+        }
+
+        &:hover {
+            color: var(--color-bg);
+            border-color: var(--color-bg);
+
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.ho-1 {
+    transition: 300ms;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        background: var(--color-t2);
+        height: 1px;
+        width: 0;
+
+        bottom: 0;
+        left: 0;
+
+        transition: 300ms;
+    }
+
+    &:hover {
+
+        &::after {
+
+            width: 100%;
+        }
+
+
+    }
+}
+
+.ho-icon {
+    transition: 300ms;
+
+    &:hover {
+        filter: drop-shadow(2px 2px 2px #bfbfbf2c);
+
+        transform: scale(1.1);
+    }
+}
+
+.sect {
+    margin: 100px 0;
+
+    &-head {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        margin-bottom: 50px;
+
+        .-discription {
+            font-weight: 300;
+            font-size: var(--t24);
+            font-variant: small-caps;
+            color: var(--color-t1);
+
+        }
+
+    }
+}
+
+.politic {
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+
+
+    span {
+        font-weight: 400;
+        font-size: 20px;
+        color: var(--color-t2);
+    }
+
+
+
+
+
+    input {
+        display: none;
+    }
+
+    .checkmark {
+        width: 17px;
+        height: 17px;
+        min-width: 17px;
+        min-height: 17px;
+        border: 2px solid #ccc;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    input:checked+.checkmark {}
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 4px;
+        top: 0px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+    input:checked+.checkmark:after {
+        display: block;
+    }
+}

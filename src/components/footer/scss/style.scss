@@ -1,0 +1,59 @@
+.footer {
+    background: var(--color-bg);
+
+    padding: 40px 0;
+
+    &-contact {
+        font-weight: 400;
+        font-size: var(--t18);
+        text-transform: uppercase;
+        color: var(--color-t2);
+
+        width: min-content;
+        text-wrap: nowrap;
+
+         /* Стандартный подход для максимальной поддержки */
+  white-space: nowrap;
+  
+  /* Дополнительная защита */
+  overflow: hidden;
+  text-overflow: ellipsis;
+    -webkit-text-wrap: nowrap; /* Для WebKit браузеров */
+  -moz-text-wrap: nowrap;    /* Для Firefox */
+  text-wrap: nowrap;
+  white-space: nowrap;
+        &_box {
+            gap: 15px;
+
+        @media (max-width: 1000px) {
+            align-items: center;
+
+            *{
+                text-align: center;
+            }
+        }
+        }
+    }
+
+    &-politic {
+        font-weight: 400;
+        font-size: var(--t18);
+        font-variant: small-caps;
+        text-align: right;
+        color: var(--color-t2);
+
+        @media (max-width: 1000px) {
+            text-align: center;
+        }
+    }
+
+    &-b {
+        margin-top: 35px;
+        align-items: flex-star;
+
+        @media (max-width: 1000px) {
+            gap: 15px;
+            flex-direction: column;
+        }
+    }
+}

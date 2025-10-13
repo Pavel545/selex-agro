@@ -1,0 +1,55 @@
+@charset "UTF-8";
+.footer {
+  background: var(--color-bg);
+  padding: 40px 0;
+}
+.footer-contact {
+  font-weight: 400;
+  font-size: var(--t18);
+  text-transform: uppercase;
+  color: var(--color-t2);
+  width: min-content;
+  text-wrap: nowrap;
+  /* Стандартный подход для максимальной поддержки */
+  white-space: nowrap;
+  /* Дополнительная защита */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-wrap: nowrap; /* Для WebKit браузеров */
+  -moz-text-wrap: nowrap; /* Для Firefox */
+  text-wrap: nowrap;
+  white-space: nowrap;
+}
+.footer-contact_box {
+  gap: 15px;
+}
+@media (max-width: 1000px) {
+  .footer-contact_box {
+    align-items: center;
+  }
+  .footer-contact_box * {
+    text-align: center;
+  }
+}
+.footer-politic {
+  font-weight: 400;
+  font-size: var(--t18);
+  font-variant: small-caps;
+  text-align: right;
+  color: var(--color-t2);
+}
+@media (max-width: 1000px) {
+  .footer-politic {
+    text-align: center;
+  }
+}
+.footer-b {
+  margin-top: 35px;
+  align-items: flex-star;
+}
+@media (max-width: 1000px) {
+  .footer-b {
+    gap: 15px;
+    flex-direction: column;
+  }
+}

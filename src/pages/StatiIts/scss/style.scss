@@ -1,0 +1,50 @@
+/* src/pages/stati/css/style.css */
+
+
+.statiits {
+  color: var(--color-t1);
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:20px;
+  padding:clamp(20px,4vw,48px);
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+/* Хлебные крошки */
+.statiits__crumbs { display:flex; gap:8px; align-items:center; margin-bottom:12px; }
+.statiits__crumb { font-size:14px; color:#6a6a6a; text-decoration:none; }
+.statiits__crumb--current { color:#2b2b2b; }
+
+/* Шапка */
+.statiits__head { display:grid; gap:6px; margin-bottom:16px; }
+.statiits__title { font-size:var(--t40); margin:0; letter-spacing:.01em; }
+.statiits__date { font-size:13px; color:#6a6a6a; }
+
+/* Обложка — если решите добавить превью внутри статьи */
+.statiits__cover { margin:10px 0 18px; border-radius:16px; overflow:hidden; border:1px solid #eee; background:#fafafa; }
+.statiits__cover img { width:100%; display:block; }
+
+/* Контент */
+.statiits__content {
+  font-size:var(--t18);
+  line-height:1.75;
+  letter-spacing:.005em;
+  max-width:78ch;
+  margin:0 auto;
+}
+.statiits__content p { margin:0 0 1em; }
+.statiits__content h2, .statiits__content h3, .statiits__content h4 { margin:1.4em 0 .6em; line-height:1.25; }
+.statiits__h--h2 { font-size: var(--t36); }
+.statiits__h--h3 { font-size: var(--t30); }
+.statiits__h--h4 { font-size: var(--t24); }
+.statiits__content ul, .statiits__content ol { padding-left:20px; margin:.6em 0; }
+.statiits__content a { color:inherit; text-decoration:underline; text-underline-offset:2px; }
+.statiits__content a:hover { text-decoration-thickness:2px; }
+
+/* Подвал */
+.statiits__footer { margin-top:calc(var(--m)*.8); }
+.statiits__nav { display:flex; justify-content:space-between; gap:12px; }
+.statiits__navlink { color:inherit; text-decoration:underline; text-underline-offset:2px; }
+
+/* 404 */
+.statiits__notfound { text-align:center; padding:30px 0; }

@@ -1,0 +1,48 @@
+.fos {
+  background: var(--bgf);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: var(--h);
+  min-width: 100%;
+  position: relative;
+  padding: 50px 0;
+}
+.fos .h2 {
+  color: var(--color-t2);
+  margin-bottom: 25px;
+}
+.fos-form {
+  backdrop-filter: blur(100px);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 40px;
+}
+.fos .text {
+  font-weight: 300;
+  font-size: var(--t24);
+  color: var(--color-t2);
+  margin-bottom: 75px;
+}
+.fos-inputGroop {
+  gap: 45px;
+  align-items: flex-start;
+}
+.fos-input_box {
+  width: 100%;
+  border-bottom: 1.5px solid var(--color-t2);
+}
+.fos-input_box input {
+  all: unset;
+  margin-bottom: 8px;
+  font-size: var(--t18);
+  font-weight: 400;
+  color: var(--color-t2);
+}
+.fos-input_box input::placeholder {
+  color: var(--color-t2);
+  font-weight: 400;
+  font-size: var(--t18);
+}
+.fos .button {
+  margin-top: 50px;
+}

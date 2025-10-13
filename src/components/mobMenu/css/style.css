@@ -1,0 +1,37 @@
+.MobMenu {
+  background: var(--color-bg);
+  padding: 10px 40px;
+  position: fixed;
+  bottom: 0vh;
+  bottom: 0dvh;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  .MobMenu {
+    display: none;
+  }
+}
+.MobMenu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+}
+.MobMenu-item_title {
+  font-weight: 400;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+.MobMenu-padd {
+  height: 60px;
+  display: none;
+}
+@media (max-width: 1000px) {
+  .MobMenu-padd {
+    display: block;
+  }
+}

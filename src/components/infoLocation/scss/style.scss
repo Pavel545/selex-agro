@@ -1,0 +1,48 @@
+.infoLocation {
+    border-radius: 10px;
+    backdrop-filter: blur(100px);
+    background: rgba(255, 255, 255, 0.04);
+
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    padding: 60px 40px;
+
+    &-item {
+        align-items: center;
+        gap: 20px;
+
+        &_svg {
+            --k: 110px;
+
+            width: var(--k);
+            height: var(--k);
+            border: 0.70px solid #fff;
+
+            border-radius: 100%;
+        }
+
+        &_title {
+            font-weight: 700;
+            font-size: var(--t40);
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--color-t2);
+        }
+
+        &_link { 
+            font-weight: 300;
+            font-size: var(--t30);
+            font-variant: small-caps;
+            text-align: center;
+            color: var(--color-t2);
+
+        }
+
+        &_links {
+            align-items: center;
+
+        }
+    }
+}

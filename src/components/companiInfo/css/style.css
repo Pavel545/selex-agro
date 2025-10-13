@@ -1,0 +1,62 @@
+.compani-info {
+  background: url(../../../../public/img/compani/fon.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 70px 0;
+}
+@media (max-width: 1000px) {
+  .compani-info {
+    padding: 20px 10px;
+  }
+}
+.compani-info_basa {
+  padding: 40px 100px;
+  backdrop-filter: blur(100px);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+@media (max-width: 1000px) {
+  .compani-info_basa {
+    padding: 20px 50px;
+  }
+}
+@media (max-width: 500px) {
+  .compani-info_basa {
+    padding: 10px 15px;
+  }
+}
+.compani-info .h2 {
+  margin-bottom: var(--m);
+  color: var(--color-t2);
+}
+.compani-info_content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--m);
+}
+@media (max-width: 1000px) {
+  .compani-info_content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.compani-info_content_item h3 {
+  font-weight: 700;
+  font-size: var(--t30);
+  text-transform: uppercase;
+  color: var(--color-t2);
+  margin-bottom: 30px;
+}
+.compani-info_content_item p {
+  font-weight: 300;
+  font-size: var(--t18);
+  font-variant: small-caps;
+  color: var(--color-t2);
+}
+.compani-info_content_item li {
+  font-weight: 300;
+  font-size: var(--t18);
+  font-variant: small-caps;
+  color: var(--color-t2);
+  list-style: none;
+}

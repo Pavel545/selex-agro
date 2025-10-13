@@ -1,0 +1,44 @@
+/* Белая тема для продуктовых страниц */
+.pi {
+  font-family: var(--font-family);
+  color: var(--color-t1);
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 20px;
+  padding: clamp(20px, 4vw, 48px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.pi__crumbs { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; }
+.pi__crumb { font-size: 14px; color: #5a5a5a; text-decoration: none; }
+.pi__crumb--current { color: #222; }
+
+.pi__head { display: grid; gap: 8px; margin-bottom: var(--m); }
+.pi__title { font-size: var(--t45); font-weight: 700; letter-spacing: .01em; }
+.pi__lead { font-size: var(--t18); color: #404040; }
+
+.pi__content { display: grid; gap: clamp(16px, 2vw, 24px); }
+.pi__block {
+  background: #fafafa; border: 1px solid #eee; border-radius: 16px;
+  padding: clamp(16px, 2vw, 24px);
+}
+.pi__h3 { font-size: var(--t24); font-weight: 700; margin: 0 0 8px; }
+.pi__p { margin: 0 0 8px; line-height: 1.6; }
+
+/* key-value list */
+.pi__kv { display: grid; gap: 8px; margin: 6px 0 0; }
+.pi__kv-row { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding: 10px 12px; background: #fff; border: 1px solid #eee; border-radius: 12px; }
+.pi__kv-row dt { color: #333; }
+.pi__kv-row dd { font-weight: 700; }
+
+/* list */
+.pi__list { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 6px; }
+
+/* table */
+.pi__table-wrap { overflow: auto; border-radius: 12px; border: 1px solid #eee; background: #fff; }
+.pi__table { width: 100%; border-collapse: collapse; }
+.pi__table thead th { text-align: left; font-weight: 700; padding: 12px; background: #f2f2f2; font-size: 14px; }
+.pi__table tbody td { padding: 12px; border-top: 1px solid #eee; font-size: 14px; }
+
+.pi__footer { margin-top: calc(var(--m) * .6); }
+.pi__note { font-size: 14px; color: #5a5a5a; }

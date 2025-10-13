@@ -1,0 +1,152 @@
+.articlesLists {
+
+
+    &-content {}
+
+
+}
+
+.stati {
+    border-radius: 24px;
+    padding: clamp(20px, 4vw, 48px);
+
+    &__menu {
+        display: flex;
+        gap: 25px;
+        justify-content: flex-end;
+
+        .-t1 {
+            border-color: var(--color-t1);
+            color: var(--color-t1);
+        }
+    }
+}
+
+.stati__content {
+    display: grid;
+    gap: 16px;
+}
+
+.stati__menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.stati__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: clamp(16px, 2vw, 24px);
+}
+
+.stati-card {
+    grid-column: span 4;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.stati-card__imgwrap {
+    display: block;
+    aspect-ratio: 16/9;
+    background: rgba(0, 0, 0, .15);
+}
+
+.stati-card__imgwrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.stati-card__body {
+    padding: 14px 16px;
+    display: grid;
+    gap: 8px;
+}
+
+.stati-card__date {
+    font-size: 12px;
+    opacity: .8;
+}
+
+.stati-card__title {
+    font-size: var(--t18);
+    margin: 0;
+}
+
+.stati-card__title a {
+    color: var(--color-t1);
+    text-decoration: none;
+}
+
+.stati-card__excerpt {
+    font-size: 14px;
+    opacity: .9;
+}
+
+.stati-card__more {
+    margin-top: 4px;
+}
+
+.link-btn {
+    color: var(--color-t1);
+    text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+    .stati-card {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 640px) {
+    .stati-card {
+        grid-column: span 12;
+    }
+}
+
+/* Пагинация */
+.stati__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.pag-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--color-bg);
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: var(--color-t1);
+}
+
+.pag-btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.pag-pages {
+    display: flex;
+    gap: 6px;
+}
+
+.pag-num {
+    min-width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid var(--color-bg);
+    background: transparent;
+    color: var(--color-t1);
+}
+
+.pag-num.is-active {
+    background: rgba(255, 255, 255, 0.18);
+    font-weight: 700;
+}
