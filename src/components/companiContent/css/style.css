@@ -3,7 +3,7 @@
   font-family: var(--font-family);
   color: var(--color-t2);
   background: radial-gradient(1400px 700px at 0% -20%, rgba(255, 255, 255, 0.06), transparent), linear-gradient(0deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)), var(--color-bg);
-  padding: clamp(20px, 4vw, 48px);
+  padding: var(--padd) 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 .cc li {
@@ -20,6 +20,13 @@
   font-size: var(--t45);
   font-weight: 700;
   letter-spacing: 0.02em;
+  line-height: 110%;
+  margin-bottom: var(--m);
+}
+@media (max-width: 500px) {
+  .cc__title {
+    font-size: var(--t36);
+  }
 }
 
 .cc__lead {

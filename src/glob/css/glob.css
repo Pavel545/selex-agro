@@ -16,6 +16,13 @@ html {
   --t40: clamp(24px, 2rem + 1.25vw, 40px);
   --t45: clamp(26px, 2.25rem + 1.5vw, 45px);
   --m: 50px;
+  --padd:100px;
+}
+@media (max-width: 500px) {
+  :root {
+    --m: 25px;
+    --padd:50px;
+  }
 }
 
 *,

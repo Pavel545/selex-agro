@@ -21,6 +21,13 @@ html {
     --t45: clamp(26px, 2.25rem + 1.5vw, 45px);
 
     --m: 50px;
+    --padd:100px;
+
+    @media (max-width: 500px) {
+        
+    --m: 25px;
+    --padd:50px;
+    }
 }
 
 *,
