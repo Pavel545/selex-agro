@@ -36,10 +36,11 @@
 
         justify-content: center;
         height: var(--h);
-        
+
         width: min-content;
-    max-width: 100%;
-    padding-top: 10vh;
+        max-width: 100%;
+        padding-top: 10vh;
+
         &.-max {
             width: 100%;
 
@@ -49,7 +50,9 @@
             width: 100%;
 
         }
-
+        @media (max-width: 700px) {
+            align-items: center;
+        }
     }
 
     &-description {
@@ -62,6 +65,10 @@
                 display: none;
             }
         }
+        @media (max-width: 700px) {
+            text-align: center;
+        }
+
 
 
     }

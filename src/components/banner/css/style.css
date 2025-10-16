@@ -39,6 +39,11 @@
     width: 100%;
   }
 }
+@media (max-width: 700px) {
+  .banner-content {
+    align-items: center;
+  }
+}
 .banner-description {
   font-weight: 500;
   font-size: var(--t30);
@@ -47,5 +52,10 @@
 @media (max-width: 1000px) {
   .banner-description .br-desk {
     display: none;
+  }
+}
+@media (max-width: 700px) {
+  .banner-description {
+    text-align: center;
   }
 }
