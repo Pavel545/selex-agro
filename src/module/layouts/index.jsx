@@ -5,17 +5,17 @@ import MobMenu from '../../components/mobMenu';
 import Lenis from 'lenis';
 import { useEffect } from 'react';
 import CookieConsent from '../../components/CookieConsent/CookieConsent';
-const AppLayout = () => {
 
-   useEffect(() => {
+const AppLayout = () => {
+  useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      smoothTouch: true, // ✅ Включаем для тач-устройств
-      touchMultiplier: 2, // ✅ Чувствительность для тач
+      smoothTouch: true,
+      touchMultiplier: 2,
       smoothWheel: true,
     });
 
@@ -30,16 +30,17 @@ const AppLayout = () => {
       lenis.destroy();
     };
   }, []);
-  return (
-      <>
-        <main>
-        <Outlet />
-        <CookieConsent/>
-      </main>
-      <Footer/>
-        <MobMenu />
 
-      </>
+  return (
+    <>
+      <main>
+        <Outlet />
+        {/* CookieConsent теперь сам решает показываться или нет */}
+        <CookieConsent />
+      </main>
+      <Footer />
+      <MobMenu />
+    </>
   );
 };
 
