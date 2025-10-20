@@ -53,10 +53,12 @@ export default function Banner({
 
                 <SlideIn delays={0.3}>
                   <a href={link} className="button -t1">
-                  <svg>
+                  {/* <svg>
                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
-                  </svg>
-                  {textBut}
+                  </svg> */}
+                  <span>
+                    {textBut}
+                  </span>
                 </a>
                 </SlideIn>
               </>

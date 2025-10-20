@@ -1,11 +1,13 @@
 .MobMenu {
-    background: var(--color-bg);
+  background: var(--color-bg);
     padding: 10px 40px;
     position: fixed;
     bottom: 0vh;
     bottom: 0dvh;
+    height: 80px;
     left: 0;
     z-index: 999;
+    align-items: flex-end;
     width: 100%;
 
     @media (min-width: 1000px) {
@@ -17,8 +19,42 @@
         flex-direction: column;
         align-items: center;
         gap: 11px;
+        position: relative;
+        // padding: 8px 12px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
 
-        &_iconBox {}
+        &_iconBox {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        &_iconBox svg {
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Плашка под иконкой */
+        &_iconBox::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+            z-index: 0;
+        }
 
         &_title {
             font-weight: 400;
@@ -26,6 +62,76 @@
             text-transform: uppercase;
             text-align: center;
             color: #fff;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        &_title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            border-radius: 1px;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        &.active {
+            /* Убираем фон у всего элемента */
+            background: transparent;
+
+            .MobMenu-item_iconBox {
+                transform: translateY(-5px);
+            }
+
+            /* Белая обводка */
+            .MobMenu-item_iconBox::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 44px;
+                height: 44px;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                animation: circleAppear 0.3s ease forwards;
+                z-index: 1;
+            }
+
+            /* Плашка под иконкой */
+            .MobMenu-item_iconBox::after {
+                width: 44px;
+                height: 44px;
+                animation: backgroundAppear 0.3s ease forwards;
+            }
+
+            .MobMenu-item_iconBox svg {
+                transform: scale(1.1);
+            }
+
+            .MobMenu-item_title::after {
+                // width: 100%;
+                animation: underlineAppear 0.3s ease 0.1s forwards;
+            }
+        }
+
+        /* Анимация при уходе из активного состояния */
+        &:not(.active) {
+            .MobMenu-item_iconBox::before {
+                animation: circleDisappear 0.3s ease forwards;
+            }
+
+            .MobMenu-item_iconBox::after {
+                animation: backgroundDisappear 0.3s ease forwards;
+            }
+
+            .MobMenu-item_title::after {
+                animation: underlineDisappear 0.3s ease forwards;
+            }
         }
     }
 
@@ -36,5 +142,117 @@
         @media (max-width: 1000px) {
             display: block;
         }
+    }
+}
+
+/* Анимация появления круга */
+@keyframes circleAppear {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Анимация исчезновения круга */
+@keyframes circleDisappear {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Анимация появления плашки */
+@keyframes backgroundAppear {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    50% {
+        width: 44px;
+        height: 44px;
+        opacity: 0.5;
+    }
+
+    100% {
+        width: 44px;
+        height: 44px;
+        opacity: 1;
+    }
+}
+
+/* Анимация исчезновения плашки */
+@keyframes backgroundDisappear {
+    0% {
+        width: 44px;
+        height: 44px;
+        opacity: 1;
+    }
+
+    50% {
+        width: 44px;
+        height: 44px;
+        opacity: 0.5;
+    }
+
+    100% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}
+
+/* Анимация появления подчеркивания */
+@keyframes underlineAppear {
+    0% {
+        width: 0;
+        transform: translateX(-50%) scaleX(0);
+    }
+
+    50% {
+        transform: translateX(-50%) scaleX(1.1);
+    }
+
+    100% {
+        width: 100%;
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+/* Анимация исчезновения подчеркивания */
+@keyframes underlineDisappear {
+    0% {
+        width: 100%;
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    50% {
+        transform: translateX(-50%) scaleX(1.1);
+    }
+
+    100% {
+        width: 0;
+        transform: translateX(-50%) scaleX(0);
     }
 }
