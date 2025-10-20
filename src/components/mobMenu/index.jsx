@@ -1,5 +1,5 @@
 import "./css/style.css";
-import { NavLink, useLocation } from "react-router-dom";
+import {  useLocation } from "react-router-dom";
 
 export default function MobMenu() {
     const location = useLocation();
@@ -16,7 +16,7 @@ export default function MobMenu() {
     return (
         <>
             <div className="MobMenu flex--sb">
-                <NavLink to="/" className={`MobMenu-item ${isActive("/") ? "active" : ""}`}>
+                <a href="/" className={`MobMenu-item ${isActive("/") ? "active" : ""}`}>
                     <div className="MobMenu-item_iconBox">
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.94444 12H1.5L12.5 1L23.5 12H21.0556M3.94444 12V20.5556C3.94444 21.2039 4.20198 21.8256 4.66041 22.284C5.11883 22.7425 5.74058 23 6.38889 23H18.6111C19.2594 23 19.8812 22.7425 20.3396 22.284C20.798 21.8256 21.0556 21.2039 21.0556 20.5556V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -27,9 +27,9 @@ export default function MobMenu() {
                     <p className="MobMenu-item_title">
                         Главная
                     </p>
-                </NavLink>
+                </a>
 
-                <NavLink to="/company" className={`MobMenu-item ${isActive("/company") ? "active" : ""}`}>
+                <a href="/company" className={`MobMenu-item ${isActive("/company") ? "active" : ""}`}>
                     <div className="MobMenu-item_iconBox">
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" clipRule="evenodd" d="M11 0C4.92489 0 0 4.92483 0 11C0 17.0751 4.92489 22 11 22C17.0752 22 22 17.0751 22 11C22 4.92483 17.0752 0 11 0ZM11 19.8C6.14769 19.8 2.20002 15.8523 2.20002 11C2.20002 6.14764 6.14764 2.20002 11 2.20002C15.8524 2.20002 19.8 6.14764 19.8 11C19.8 15.8523 15.8524 19.8 11 19.8ZM12.3774 6.59999C12.3774 7.39756 11.7967 7.97501 11.0112 7.97501C10.1938 7.97501 9.62738 7.39751 9.62738 6.58473C9.62738 5.80356 10.2092 5.22503 11.0112 5.22503C11.7967 5.22503 12.3774 5.80356 12.3774 6.59999ZM9.90242 9.89999H12.1024V16.5H9.90242V9.89999Z" fill="white" />
@@ -39,9 +39,9 @@ export default function MobMenu() {
                     <p className="MobMenu-item_title">
                         о компании
                     </p>
-                </NavLink>
+                </a>
 
-                <NavLink to="/our_products" className={`MobMenu-item ${isActive("/our_products") ? "active" : ""}`}>
+                <a href="/our_products" className={`MobMenu-item ${isActive("/our_products") ? "active" : ""}`}>
                     <div className="MobMenu-item_iconBox">
                         <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M23.5686 4.5834L20.9163 15.1947H6.86157L4.20923 4.5834H23.5686Z" stroke="white" strokeWidth="0.5" />
@@ -54,9 +54,9 @@ export default function MobMenu() {
                     <p className="MobMenu-item_title">
                         Товары
                     </p>
-                </NavLink>
+                </a>
 
-                <NavLink to="/services" className={`MobMenu-item ${isActive("/services") ? "active" : ""}`}>
+                <a href="/services" className={`MobMenu-item ${isActive("/services") ? "active" : ""}`}>
                     <div className="MobMenu-item_iconBox">
                         <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.0001 2L1.57153 7.2381M11.0001 2L20.4287 7.2381M11.0001 2L6.28582 4.61905L11.0001 7.2381L15.7144 4.61905L11.0001 2ZM1.57153 7.2381V18.7619M1.57153 7.2381L11.0001 12.4762M1.57153 18.7619L11.0001 24M1.57153 18.7619V13L6.28582 15.619V21.381L1.57153 18.7619ZM11.0001 24L20.4287 18.7619M11.0001 24V12.4762M20.4287 18.7619V7.2381M20.4287 18.7619V13L15.7144 15.619V21.381L20.4287 18.7619ZM20.4287 7.2381L11.0001 12.4762" stroke="white" strokeWidth="2" />
@@ -66,7 +66,7 @@ export default function MobMenu() {
                     <p className="MobMenu-item_title">
                         Услуги
                     </p>
-                </NavLink>
+                </a>
 
                 {/* <a href="/stati" className={`MobMenu-item ${isActive("/stati") ? "active" : ""}`}>
                     <div className="MobMenu-item_iconBox">
