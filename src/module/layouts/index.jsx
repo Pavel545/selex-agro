@@ -38,8 +38,7 @@ const AppLayout = () => {
         {/* CookieConsent теперь сам решает показываться или нет */}
         <CookieConsent />
       </main>
-      <Footer />
-      <MobMenu />
+      
     </>
   );
 };

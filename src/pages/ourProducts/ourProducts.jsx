@@ -1,6 +1,8 @@
 import Banner from "../../components/banner";
+import Footer from '../../components/footer';
 import Fos from "../../components/fos";
 import Goods from "../../components/goods";
+import MobMenu from '../../components/mobMenu';
 
 
 export default function OurProducts(params) {
@@ -22,5 +24,7 @@ export default function OurProducts(params) {
         />
         <Goods all />
         <Fos img={"/img/fonFOS2.jpg"} />
+        <Footer />
+        <MobMenu />
     </>
 }

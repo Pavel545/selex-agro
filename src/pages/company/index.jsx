@@ -1,6 +1,8 @@
-import Banner from "../../components/banner"
-import CompaniContent from "../../components/companiContent"
-import CompaniInfo from "../../components/companiInfo"
+import Banner from "../../components/banner";
+import CompaniContent from "../../components/companiContent";
+import CompaniInfo from "../../components/companiInfo";
+import MobMenu from '../../components/mobMenu';
+import Footer from '../../components/footer';
 
 export default function Company(params) {
 
@@ -20,5 +22,7 @@ export default function Company(params) {
         />
         <CompaniContent/>
         <CompaniInfo/> 
+        <Footer />
+        <MobMenu />
     </>
 }   
