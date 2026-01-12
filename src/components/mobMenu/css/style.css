@@ -1,21 +1,24 @@
 @charset "UTF-8";
+
 .MobMenu {
   background: var(--color-bg);
-  padding: 10px 40px;
+  padding: 10px 40px 20px;
   position: fixed;
   bottom: 0vh;
   bottom: 0dvh;
-  height: 80px;
+  height: 95px;
   left: 0;
   z-index: 999;
   align-items: flex-end;
   width: 100%;
 }
+
 @media (min-width: 1000px) {
   .MobMenu {
     display: none;
   }
 }
+
 .MobMenu-item {
   display: flex;
   flex-direction: column;
@@ -26,6 +29,7 @@
   transition: all 0.3s ease;
   /* Анимация при уходе из активного состояния */
 }
+
 .MobMenu-item_iconBox {
   position: relative;
   width: 40px;
@@ -36,6 +40,7 @@
   transition: all 0.3s ease;
   z-index: 1;
 }
+
 .MobMenu-item_iconBox svg {
   transition: all 0.3s ease;
   position: relative;
@@ -48,6 +53,7 @@
 .MobMenu-item.active .MobMenu-item_title {
   color: #4c6329;
 }
+
 .MobMenu-item_title {
   color: #fff;
   font-size: 11px;
@@ -58,115 +64,20 @@
   transition: all 0.3s ease;
 }
 .MobMenu-item:not(.active) .MobMenu-item_iconBox::before {
-  animation: circleDisappear 0.3s ease forwards;
+  display: none;
 }
+
 .MobMenu-item:not(.active) .MobMenu-item_iconBox::after {
-  animation: backgroundDisappear 0.3s ease forwards;
+  display: none;
 }
-.MobMenu-item:not(.active) .MobMenu-item_title::after {
-  animation: underlineDisappear 0.3s ease forwards;
-}
+
 .MobMenu-padd {
   height: 60px;
   display: none;
 }
+
 @media (max-width: 1000px) {
   .MobMenu-padd {
     display: block;
-  }
-}
-
-/* Анимация появления круга */
-@keyframes circleAppear {
-  0% {
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-    opacity: 0.7;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-}
-/* Анимация исчезновения круга */
-@keyframes circleDisappear {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-    opacity: 0.5;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-  }
-}
-/* Анимация появления плашки */
-@keyframes backgroundAppear {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
-  50% {
-    width: 44px;
-    height: 44px;
-    opacity: 0.5;
-  }
-  100% {
-    width: 44px;
-    height: 44px;
-    opacity: 1;
-  }
-}
-/* Анимация исчезновения плашки */
-@keyframes backgroundDisappear {
-  0% {
-    width: 44px;
-    height: 44px;
-    opacity: 1;
-  }
-  50% {
-    width: 44px;
-    height: 44px;
-    opacity: 0.5;
-  }
-  100% {
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
-}
-/* Анимация появления подчеркивания */
-@keyframes underlineAppear {
-  0% {
-    width: 0;
-    transform: translateX(-50%) scaleX(0);
-  }
-  50% {
-    transform: translateX(-50%) scaleX(1.1);
-  }
-  100% {
-    width: 100%;
-    transform: translateX(-50%) scaleX(1);
-  }
-}
-/* Анимация исчезновения подчеркивания */
-@keyframes underlineDisappear {
-  0% {
-    width: 100%;
-    transform: translateX(-50%) scaleX(1);
-  }
-  50% {
-    transform: translateX(-50%) scaleX(1.1);
-  }
-  100% {
-    width: 0;
-    transform: translateX(-50%) scaleX(0);
   }
 }

@@ -3,6 +3,8 @@ import Footer from "../../components/footer";
 import MobMenu from "../../components/mobMenu";
 import Production from "../../components/production";
 import ServicesInfo from "../../components/servicesInfo";
+import Footer from '../../components/footer';
+import MobMenu from '../../components/mobMenu';
 
 export default function Services(params) {
   return (
@@ -26,7 +28,6 @@ export default function Services(params) {
       <Production />
       {/* <BioproductsInfo/> */}
       <ServicesInfo />
-
       <Footer />
       <MobMenu />
     </>
