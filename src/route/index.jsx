@@ -10,9 +10,7 @@ import Company from "../pages/company";
 import Services from "../pages/services";
 import Contacts from "../pages/contacts";
 import ProductsIts from "../pages/products";
-import StatiIts from "../pages/StatiIts/StatiIts";
 import Politic from "../pages/politic";
-import Stati from "../components/articlesLists";
 // Ленивые импорты с корректными путями
 const Main = lazy(() => import("../pages/main"));
 const NotFound = lazy(() => import("../pages/notFound"));

@@ -1,0 +1,51 @@
+.CompaniCR {
+  background: #000;
+  padding: 20px 0;
+}
+
+.CompaniCR .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.CompaniCR_logo_a {
+  outline: none;
+
+  transition: 300ms;
+}
+.CompaniCR_logo_a:hover{
+    transform: scale(1.05);
+}
+.CompaniCR_logo {
+  max-width: 100px;
+}
+
+.CompaniCR_ps {
+  color: #ffffff;
+  font-size: clamp(12px, 1.5rem, 16px);
+        text-align: center;
+
+}
+.CompaniCR_contact-item{
+    transition: 300ms;
+}
+.CompaniCR_contact-item:hover{
+    transform: scale(1.05);
+}
+.CompaniCR_contact {
+  display: flex;
+  gap: 15px;
+}
+
+
+@media (max-width: 1000px) {
+    .CompaniCR .container {
+        flex-direction: column;
+    }
+
+    .CompaniCR_ps{
+    }
+}

@@ -1,5 +1,7 @@
 import React from "react";
 import "./css/style.css";
+import Footer from "../../components/footer";
+import MobMenu from "../../components/mobMenu";
 
 // Тип документа
 const extIcon = (ext) =>
@@ -73,26 +75,30 @@ export default function Politic({ docs }) {
       ];
 
   return (
-    <section className="plc" aria-label="Документы компании">
-      <div className="container">
-        <div className="plc__head">
-          <h2 className="plc__title">Документы</h2>
-          <p className="plc__lead">
-            Собрали ключевые политики и договоры для скачивания и просмотра.
-          </p>
-        </div>
+    <>
+      <section className="plc" aria-label="Документы компании">
+        <div className="container">
+          <div className="plc__head">
+            <h2 className="plc__title">Документы</h2>
+            <p className="plc__lead">
+              Собрали ключевые политики и договоры для скачивания и просмотра.
+            </p>
+          </div>
 
-        <div className="plc__grid">
-          {items.slice(0, 4).map((d, i) => (
-            <DocCard key={i} {...d} />
-          ))}
-        </div>
+          <div className="plc__grid">
+            {items.slice(0, 4).map((d, i) => (
+              <DocCard key={i} {...d} />
+            ))}
+          </div>
 
-        <div className="plc__note">
-          Нажмите «Скачать» чтобы сохранить файл, или «Открыть в браузере» для
-          быстрого просмотра.
+          <div className="plc__note">
+            Нажмите «Скачать» чтобы сохранить файл, или «Открыть в браузере» для
+            быстрого просмотра.
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Footer />
+      <MobMenu />
+    </>
   );
 }

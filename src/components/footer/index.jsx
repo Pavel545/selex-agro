@@ -1,8 +1,10 @@
 import { MoveLeft } from "../../module/motion";
+import CompaniCreate from "../companiCreate";
 import "./css/style.css";
 
 export default function Footer(params) {
   return (
+    <>
     <footer className="footer">
       <div className="container">
         <div className="header-links flex">
@@ -100,5 +102,7 @@ export default function Footer(params) {
         </a>
       </div>
     </footer>
+    <CompaniCreate/>
+    </>
   );
 }

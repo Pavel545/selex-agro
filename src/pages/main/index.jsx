@@ -1,6 +1,8 @@
 import Banner from "../../components/banner";
+import Footer from "../../components/footer";
 import Fos from "../../components/fos";
 import Goods from "../../components/goods";
+import MobMenu from "../../components/mobMenu";
 
 export default function Main(params) {
 
@@ -20,7 +22,8 @@ export default function Main(params) {
         />
         <Goods  />
         <Fos img={"/img/fonFOS1.jpg"} />
-
+<Footer />
+      <MobMenu />
 
     </>
 }

@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import "./css/style.css";
 import Banner from "../../components/banner";
+import Footer from "../../components/footer";
+import MobMenu from "../../components/mobMenu";
 
 const sorbentsStats = [
   { name: "Зеараленон", value: "99 %" },
@@ -24,8 +26,7 @@ const blocks = {
   sorbents: {
     img: "/img/product/8.png",
     title: "Сорбенты микотоксинов по технологии SILEX®",
-    lead:
-      "Технология производства сорбентов для животных и птицы на основе диоксида кремния марки SILEX®.",
+    lead: "Технология производства сорбентов для животных и птицы на основе диоксида кремния марки SILEX®.",
     sections: [
       {
         h: "Сорбционная ёмкость по микотоксинам",
@@ -61,8 +62,7 @@ const blocks = {
   silex: {
     img: "/img/product/9.png",
     title: "КРЕМНИЙ ДИОКСИД «SILEX»®",
-    lead:
-      "Тонкодисперсная двуокись кремния — пористый носитель для действующих веществ и микроорганизмов.",
+    lead: "Тонкодисперсная двуокись кремния — пористый носитель для действующих веществ и микроорганизмов.",
     sections: [
       {
         h: "Области применения",
@@ -111,8 +111,8 @@ export default function ProductsIts() {
   const page = blocks[url] ?? blocks.sorbents; // fallback на sorbents
 
   return (
-   <>
-    <Banner
+    <>
+      <Banner
         bg
         img={page.img}
         title={page.title}
@@ -120,59 +120,60 @@ export default function ProductsIts() {
         textBut={"Узнать больше"}
         link={"#pi"}
       />
-    <section className="pi" aria-label={page.title}>
-      <div className="container">
-
-      
-
-    
-
-      <div className="pi__content">
-        {page.sections.map((s, i) => (
-          <article className="pi__block" key={i}>
-            <h3 className="pi__h3">{s.h}</h3>
-            {s.p && s.p.map((t, idx) => (
-              <p key={idx} className="pi__p">{t}</p>
-            ))}
-            {s.list && (
-              <ul className="pi__list">
-                {s.list.map((t, idx) => (
-                  <li key={idx}>{t}</li>
-                ))}
-              </ul>
-            )}
-            {s.type === "kv" && <KeyValueList data={s.data} />}
-            {s.table && (
-              <div className="pi__table-wrap">
-                <table className="pi__table">
-                  <thead>
-                    <tr>
-                      <th>Наименование показателя</th>
-                      <th>Значение</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {s.table.map((row, rIdx) => (
-                      <tr key={rIdx}>
-                        <td>{row.k}</td>
-                        <td>{row.v}</td>
-                      </tr>
+      <section className="pi" aria-label={page.title}>
+        <div className="container">
+          <div className="pi__content">
+            {page.sections.map((s, i) => (
+              <article className="pi__block" key={i}>
+                <h3 className="pi__h3">{s.h}</h3>
+                {s.p &&
+                  s.p.map((t, idx) => (
+                    <p key={idx} className="pi__p">
+                      {t}
+                    </p>
+                  ))}
+                {s.list && (
+                  <ul className="pi__list">
+                    {s.list.map((t, idx) => (
+                      <li key={idx}>{t}</li>
                     ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-          </article>
-        ))}
-      </div>
+                  </ul>
+                )}
+                {s.type === "kv" && <KeyValueList data={s.data} />}
+                {s.table && (
+                  <div className="pi__table-wrap">
+                    <table className="pi__table">
+                      <thead>
+                        <tr>
+                          <th>Наименование показателя</th>
+                          <th>Значение</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {s.table.map((row, rIdx) => (
+                          <tr key={rIdx}>
+                            <td>{row.k}</td>
+                            <td>{row.v}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
 
-      <div className="pi__footer">
-        <div className="pi__note">
-          Для уточнения характеристик и получения образцов свяжитесь с нами.
+          <div className="pi__footer">
+            <div className="pi__note">
+              Для уточнения характеристик и получения образцов свяжитесь с нами.
+            </div>
+          </div>
         </div>
-      </div>
-      </div>
-    </section></>
-  );
+      </section>
 
+      <Footer />
+      <MobMenu />
+    </>
+  );
 }

@@ -18,10 +18,7 @@ export default function MobMenu() {
             <div className="MobMenu flex--sb">
                 <a href="/" className={`MobMenu-item ${isActive("/") ? "active" : ""}`}>
                     <div className="MobMenu-item_iconBox">
-                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.94444 12H1.5L12.5 1L23.5 12H21.0556M3.94444 12V20.5556C3.94444 21.2039 4.20198 21.8256 4.66041 22.284C5.11883 22.7425 5.74058 23 6.38889 23H18.6111C19.2594 23 19.8812 22.7425 20.3396 22.284C20.798 21.8256 21.0556 21.2039 21.0556 20.5556V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M8.83325 23V15.6667C8.83325 15.0184 9.09079 14.3966 9.54921 13.9382C10.0076 13.4798 10.6294 13.2222 11.2777 13.2222H13.7221C14.3704 13.2222 14.9922 13.4798 15.4506 13.9382C15.909 14.3966 16.1666 15.0184 16.1666 15.6667V23" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.94444 12H1.5L12.5 1L23.5 12H21.0556M3.94444 12V20.5556C3.94444 21.2039 4.20198 21.8256 4.66041 22.284C5.11883 22.7425 5.74058 23 6.38889 23H18.6111C19.2594 23 19.8812 22.7425 20.3396 22.284C20.798 21.8256 21.0556 21.2039 21.0556 20.5556V12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8.83325 23V15.6667C8.83325 15.0184 9.09079 14.3966 9.54921 13.9382C10.0076 13.4798 10.6294 13.2222 11.2777 13.2222H13.7221C14.3704 13.2222 14.9922 13.4798 15.4506 13.9382C15.909 14.3966 16.1666 15.0184 16.1666 15.6667V23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                     </div>
 
                     <p className="MobMenu-item_title">

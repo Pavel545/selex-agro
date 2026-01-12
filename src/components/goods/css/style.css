@@ -72,6 +72,11 @@
     height: 150px;
   }
 }
+@media (max-width: 500px) {
+  .goods-list_item .img_box::after {
+    height: 170px;
+  }
+}
 .goods-list_item .link {
   margin-bottom: 30px;
 }
@@ -106,6 +111,11 @@
 @media (max-width: 1000px) {
   .goods-list_item:hover .clue {
     bottom: 0px;
+  }
+}
+@media (max-width: 500px) {
+  .goods-list_item:hover .clue {
+    bottom: 15px;
   }
 }
 .goods-list_item:hover .clue path {

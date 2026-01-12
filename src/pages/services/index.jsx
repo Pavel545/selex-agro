@@ -1,4 +1,6 @@
 import Banner from "../../components/banner";
+import Footer from "../../components/footer";
+import MobMenu from "../../components/mobMenu";
 import Production from "../../components/production";
 import ServicesInfo from "../../components/servicesInfo";
 
@@ -24,6 +26,9 @@ export default function Services(params) {
       <Production />
       {/* <BioproductsInfo/> */}
       <ServicesInfo />
+
+      <Footer />
+      <MobMenu />
     </>
   );
 }

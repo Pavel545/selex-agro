@@ -131,7 +131,7 @@ button {
 
     @media (max-width: 1000px) {
         width: auto;
-        font-size: clamp(42px, 8vw, 48px);
+        font-size: clamp(34px, 8vw, 48px);
     }
 
     @media (max-width: 700px) {
@@ -240,7 +240,7 @@ button {
         //     }
         // }
 
-          span {
+        span {
             z-index: 2;
             position: relative;
         }
